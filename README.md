@@ -16,8 +16,8 @@ Check3 is the culmination of an intensive three-week development cycle to demons
 Real-Time Task Management:  
 https://trello.com/b/VF8P2PR6/trio
 
-Wireframes:  
-https://docs.google.com/document/d/1OGQ9UKRqdeVrRPJbaDhwO-tbq1UTneJuskO7GKNg9hM/edit
+Planning Document:
+https://github.com/llamacoder/capstone/blob/master/planning/Check3%20Planning%20Document.pdf
 
 Color Schema and Styling:  
 ![Example](readme_files/style.png)
