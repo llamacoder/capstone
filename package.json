@@ -16,5 +16,11 @@
   "bugs": {
     "url": "https://github.com/llamacoder/capstone/issues"
   },
-  "homepage": "https://github.com/llamacoder/capstone#readme"
+  "homepage": "https://github.com/llamacoder/capstone#readme",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "express": "^4.16.2",
+    "knex": "^0.14.4",
+    "pg": "^7.4.1"
+  }
 }
