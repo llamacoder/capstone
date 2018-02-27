@@ -2,7 +2,7 @@
 
 ### Check3 is a time management app designed to increase productivity through the daily identification of critical action items.
 
-![Example](someimagewillgohere.png)
+![Picture Coming](someimagewillgohere.png)
 
 Motivation
 
@@ -16,18 +16,8 @@ Check3 is the culmination of an intensive three-week development cycle to demons
 Real-Time Task Management:  
 https://trello.com/b/VF8P2PR6/trio
 
-Planning Document:
+Planning Document (Schema, Style Guide, Server Routes, Wireframes):
 https://github.com/llamacoder/capstone/blob/master/planning/Check3%20Planning%20Document.pdf
-
-Color Schema and Styling:  
-![Example](readme_files/style.png)
-
-Entity Relationship Diagram:  
-![Example](readme_files/erd.png)
-
-Server Routes and Seed Data:  
-https://github.com/nigelflippo/epro_api
-
 
 Built With
 * HTML
