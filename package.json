@@ -18,9 +18,14 @@
   },
   "homepage": "https://github.com/llamacoder/capstone#readme",
   "dependencies": {
+    "bcrypt": "^1.0.3",
     "body-parser": "^1.18.2",
+    "dotenv": "^5.0.1",
     "express": "^4.16.2",
+    "jsonwebtoken": "^8.2.0",
     "knex": "^0.14.4",
-    "pg": "^7.4.1"
+    "nodemon": "^1.17.1",
+    "pg": "^7.4.1",
+    "util": "^0.10.3"
   }
 }
