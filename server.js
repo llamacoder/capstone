@@ -17,7 +17,7 @@ const app = express();
 
 require('dotenv').config();
 
-const routes = require('./routes/routes');
+// const routes = require('./routes/routes');
 
 
 
@@ -39,7 +39,7 @@ app.use(express.static(path.join('public')));
 /*
  * Route to the appropriate functions
 * */
-app.use('/',routes);
+// app.use('/',routes);
 
 /*
  * Catchall route handler for any requests to routes
