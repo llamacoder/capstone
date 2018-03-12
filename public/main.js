@@ -1,5 +1,6 @@
 document.addEventListener('DOMContentLoaded', function () {
-
+  alert("Inside...");
+  
   var itemContainers = [].slice.call(document.querySelectorAll('.board-column-content'));
   var columnGrids = [];
   var boardGrid;
