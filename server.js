@@ -11,7 +11,8 @@ const app = express();
  * Store the secret needed for JWT signing and
  * verifying in an environmental variable TOKEN_SECRET stored in
  * the .env file and loaded into `process.env` with the `dotenv`
- * library.
+ * library.  Interestingly, this must be done before the routes
+ * are loaded. ?
  * */
 
 require('dotenv').config();

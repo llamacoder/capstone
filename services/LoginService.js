@@ -8,7 +8,6 @@ const {promisify} = require('util');
 const jwtSignAsync = promisify(jwt.sign);
 const jwtVerifyAsync = promisify(jwt.verify);
 const TOKEN_SECRET = process.env.TOKEN_SECRET;
-// const TOKEN_SECRET = "tester14";
 
 /*
  * Middleware to make sure required login info is present
