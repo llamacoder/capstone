@@ -97,7 +97,7 @@ p {
 }
 @media only screen and (min-width: 600px) {
   .board-column {
-    width: 45%;
+    /* width: 45%; */
   }
 }
 .board-column.muuri-item-releasing {
