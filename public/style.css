@@ -94,6 +94,11 @@ p {
   border-radius: 3px;
   z-index: 1;
 }
+@media only screen and (max-width: 600px) {
+  .board-column {
+    width: 95%;
+  }
+}
 .board-column.muuri-item-releasing {
   z-index: 2;
 }
@@ -126,7 +131,7 @@ p {
 .board-column-content {
   position: relative;
   border: 10px solid transparent;
-  min-height: 95px;
+  min-height: 225px;
 }
 .board-item {
   position: absolute;
