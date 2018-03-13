@@ -88,15 +88,16 @@ p {
   position: absolute;
   left: 0;
   right: 0;
-  width: 45%;
+  width: 95%;
   margin: 0 1.5%;
   background: #f0f0f0;
   border-radius: 3px;
   z-index: 1;
+  margin-bottom: 10px;
 }
-@media only screen and (max-width: 600px) {
+@media only screen and (min-width: 600px) {
   .board-column {
-    width: 95%;
+    width: 45%;
   }
 }
 .board-column.muuri-item-releasing {
@@ -163,6 +164,6 @@ p {
     text-align: center;
   }
   .board-item-content span {
-    display: none;
+    /* display: none; */
   }
 }
