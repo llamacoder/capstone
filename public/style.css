@@ -1,4 +1,8 @@
 /* Core */
+@font-face {
+  font-family: billy_ohio;
+  src: url(./fonts/Billy_Ohio.ttf);
+}
 
 body {
   margin: 0;
@@ -28,21 +32,18 @@ p {
 
 /* Showcase */
 #showcase {
-  min-height: 450px;
+  min-height: 250px;
   color: white;
   text-align: center;
 }
 @media(min-width: 700px) {
-  body {
-    /* display: none; */
-  }
 }
 
 
 
 #showcase .bg-image {
   position: absolute;
-  background: #333 url('https://images.pexels.com/photos/236636/pexels-photo-236636.jpeg');
+  background: #333 url('./images/todolistGraphic.jpg');
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -53,8 +54,23 @@ p {
 }
 
 #showcase h1 {
-  padding-top: 50px;
+  font-family: billy_ohio;
+  font-size: 100px;
+  color: #353535;
+  padding-top: 0;
   padding-bottom: 0;
+  margin-top: 35px;
+  margin-bottom: 0;
+  text-shadow: 2px 2px #57ab2a;
+}
+
+#showcase p {
+  font-family: billy_ohio;
+  font-size: 70px;
+  color: #353535;
+  padding-bottom: 30px;
+  margin-top: -20px;
+  text-shadow: 2px 2px #57ab2a;
 }
 
 #showcase .content-wrap
@@ -65,13 +81,14 @@ p {
 
 .board {
   position: relative;
-  margin-left: 1%;
+  max-width: 800px;
+  margin: auto;
 }
 .board-column {
   position: absolute;
   left: 0;
   right: 0;
-  width: 30%;
+  width: 45%;
   margin: 0 1.5%;
   background: #f0f0f0;
   border-radius: 3px;
@@ -96,18 +113,15 @@ p {
   border-radius: 3px 3px 0 0;
 }
 @media (max-width: 600px) {
-  .board-column-header {
+  /* .board-column-header {
     text-indent: -1000px;
-  }
+  } */
 }
-.board-column.todo .board-column-header {
-  background: #4A9FF9;
+.board-column.today .board-column-header {
+  background: #57ab2a;
 }
-.board-column.working .board-column-header {
+.board-column.someday .board-column-header {
   background: #f9944a;
-}
-.board-column.done .board-column-header {
-  background: #2ac06d;
 }
 .board-column-content {
   position: relative;
