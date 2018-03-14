@@ -14,7 +14,7 @@ function generateElement(itemText) {
 
 function addItemsToList(list, items) {
   for (let i = 0; i < items.length; i++) {
-    list.add(generateElement(items[i]));
+    list.add(generateElement(items[i]), {index: 0});
   }
 }
 
@@ -49,9 +49,11 @@ function activateLists() {
       let parentElement = parentGrid.getElement();
       if (parentElement.className.includes('task-finished')) {
         parentGrid.remove([item], {removeElements: true});
+        updateBGAfterSuccess();
       } else if (parentElement.className.includes('delete-task')){
         parentGrid.remove([item], {removeElements: true});
       } else {
+        clearBG();
         // Parent grid is today or someday, so
         // let's remove the fixed width/height from the
         // dragged item now that it is back in a grid
@@ -93,12 +95,52 @@ function activateLists() {
   });
 }
 
-function setPlusListener() {
-  $('.plus').click(function(e){
-     // add an item to the Someday column
-     addItemsToList(columnGrids[2], ["seven"]);
-  });
+function updateBGAfterSuccess() {
+  let list = columnGrids[0];
+  let numChildren = list.getElement().childElementCount;
+  if (numChildren === 0) {
+    let num = Math.floor((Math.random() * 10) + 1);
+    $('#excite-image').attr('src', `./images/goodjob${num}.jpeg`);
+    $('#modalExcitement').modal('open');
+  }
 }
+
+function clearBG() {
+  let list = columnGrids[0];
+    let ele = list.getElement();
+    ele.style.backgroundImage = '';
+}
+
+function setupListeners() {
+  $('.save-btn').click(handleSaveClick)
+  $('.cancel-btn').click(handleCancelClick)
+  $('.plus').click(handleNewClick);
+  $('.trello-btn').click(handleTrelloClick);
+}
+
+function handleNewClick(event) {
+  $('#task').val('')
+  $('#modal1').modal('open');
+}
+
+function handleCancelClick(event) {
+  $('#modal1').modal('close');
+}
+
+function handleSaveClick(event) {
+  let newTask = $('#task').val();
+  if (newTask) {
+    let arr = [];
+    arr.unshift(newTask);
+    addItemsToList(columnGrids[2], arr);
+  }
+  $('#modal1').modal('close');
+}
+
+function handleTrelloClick(event) {
+  alert("Coming Soon!");
+}
+
 
 $(document).ready(function() {
   activateLists();
@@ -106,7 +148,8 @@ $(document).ready(function() {
   addItemsToList(columnGrids[0], ["one", "two", "three"]);
   //  now add the SOMEDAY items
   addItemsToList(columnGrids[2], ["four", "five", "six"]);
-  setPlusListener();
+  setupListeners();
+  $('.modal').modal();
 })
 
 var TODAY_ITEMS = [
@@ -139,3 +182,61 @@ var SOMEDAY_ITEMS = [
     itemID: 5456
   }
 ]
+
+
+
+
+
+var pieces = 70,
+    speed = 1,
+    pieceW = 30,
+    pieceH = 30;
+
+
+for (var i = pieces - 1; i >= 0; i--) {
+  $('#popup').prepend('<div class="piece" style="width:'+pieceW+'px; height:'+pieceH+'px"></div>');
+};
+
+function breakGlass(from){
+  if (from === "reverse"){
+    $('.piece').each(function(){
+      TweenLite.to($(this), speed, {x:0, y:0, rotationX:0, rotationY:0, opacity: 1, z: 0});
+      TweenLite.to($('#popup h1'),0.2,{opacity:1, delay: speed});
+    });
+    return;
+  }
+
+  if(!from){
+    TweenLite.to($('#popup h1'),0.2,{opacity:0});
+  } else {
+    TweenLite.from($('#popup h1'),0.5,{opacity:0, delay: speed});
+  }
+
+  $('.piece').each(function(){
+    var distX = getRandomArbitrary(-250, 250),
+        distY = getRandomArbitrary(-250, 250),
+        rotY  = getRandomArbitrary(-720, 720),
+        rotX  = getRandomArbitrary(-720, 720),
+        z = getRandomArbitrary(-500, 500);
+
+    if(!from){
+      TweenLite.to($(this), speed, {x:distX, y:distY, rotationX:rotX, rotationY:rotY, opacity: 0, z: z});
+    } else {
+      TweenLite.from($(this), speed, {x:distX, y:distY, rotationX:rotX, rotationY:rotY, opacity: 0, z: z});
+    }
+  });
+}
+
+function getRandomArbitrary(min, max) {
+  return Math.random() * (max - min) + min;
+}
+
+
+$('.piece, h1').click(function(){
+  breakGlass();
+});
+$('.reverse').click(function(){
+  breakGlass('reverse');
+});
+
+breakGlass(true);
