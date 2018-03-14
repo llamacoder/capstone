@@ -8,10 +8,11 @@ body {
   margin: 0;
   margin-top: -35px;
   font-family: Arial, Helvetica, sans-serif;
-  background-color: #333;
+  background-color: #fff;
   font-size: 1.1em;
   line-height: 1.5;
   text-align: center;
+  background-image: url('./images/graphpaper.jpg');
 }
 
 img {
@@ -26,6 +27,7 @@ h1, h2, h3 {
 }
 
 p {
+  display: inline-block;
   margin: 0;
   padding: 1em, 0;
 }
@@ -41,21 +43,9 @@ p {
 
 
 
-#showcase .bg-image {
-  position: absolute;
-  background: #333 url('./images/todolistGraphic.png');
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  width: 100%;
-  height: 450px;
-  z-index: -1;
-  opacity: 0.4;
-}
-
 #showcase h1 {
   font-family: billy_ohio;
-  font-size: 100px;
+  font-size: 50px;
   color: #353535;
   padding-top: 0;
   padding-bottom: 0;
@@ -63,14 +53,24 @@ p {
   margin-bottom: 0;
   text-shadow: 2px 2px #57ab2a;
 }
+@media only screen and (min-width: 600px) {
+  #showcase h1 {
+    font-size: 100px;
+  }
+}
 
 #showcase p {
   font-family: billy_ohio;
-  font-size: 70px;
+  font-size: 40px;
   color: #353535;
   padding-bottom: 30px;
   margin-top: -20px;
   text-shadow: 2px 2px #57ab2a;
+}
+@media only screen and (min-width: 600px) {
+  #showcase p {
+    font-size: 70px;
+  }
 }
 
 #showcase .content-wrap
@@ -88,8 +88,8 @@ p {
   position: absolute;
   left: 0;
   right: 0;
-  width: 95%;
-  margin: 0 1.5%;
+  width: 80%;
+  margin:auto;
   background: #f0f0f0;
   border-radius: 3px;
   z-index: 1;
@@ -97,7 +97,8 @@ p {
 }
 @media only screen and (min-width: 600px) {
   .board-column {
-    width: 45%;
+    width: 47%;
+    margin: 0 1.5%;
   }
 }
 .board-column.muuri-item-releasing {
@@ -123,17 +124,31 @@ p {
     text-indent: -1000px;
   } */
 }
-.board-column.today .board-column-header {
+.today-header {
   background: #57ab2a;
 }
-.board-column.someday .board-column-header {
+.someday-header {
   background: #f9944a;
 }
+
 .board-column-content {
   position: relative;
   border: 10px solid transparent;
+}
+
+.board-column-content.today, .board-column-content.someday {
   min-height: 225px;
 }
+
+.someday-column {
+  margin-top: 60px;
+}
+@media (min-width: 600px) {
+  .someday-column {
+    margin-top: 0;
+  }
+}
+
 .board-item {
   position: absolute;
   width: 100%;
@@ -166,4 +181,19 @@ p {
   .board-item-content span {
     /* display: none; */
   }
+}
+
+.checkbox, .delete, .plus {
+  margin:auto;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  max-width: 100px;
+  width:  50px;
+  height: auto;
+}
+
+.plus {
+  cursor: pointer;
+  margin-top: 0;
+  margin-bottom: 20px;
 }

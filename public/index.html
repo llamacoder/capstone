@@ -12,47 +12,26 @@
     <div class="content-wrap">
       <h1>Check3</h1>
       <p>What needs to be done?</p>
+      <img class="plus" src="./images/plus.gif" />
     </div>
   </header>
 
   <div class="board">
-    <div class="board-column today">
-      <div class="board-column-header">Today</div>
-      <div class="board-column-content">
-        <div class="board-item">
-          <div class="board-item-content"><span>Item #</span>1</div>
-        </div>
-        <div class="board-item">
-          <div class="board-item-content"><span>Item #</span>2</div>
-        </div>
-        <div class="board-item">
-          <div class="board-item-content"><span>Item #</span>3</div>
-        </div>
-        <div class="board-item">
-          <div class="board-item-content"><span>Item #</span>4</div>
-        </div>
-        <div class="board-item">
-          <div class="board-item-content"><span>Item #</span>5</div>
-        </div>
+    <div class="board-column">
+      <div class="board-column-header today-header">Today</div>
+      <div class="board-column-content today">
+      </div>
+      <div class="board-column-content task-finished">
+        <img class="checkbox" src="./images/checkbox.png"/>
       </div>
     </div>
-    <div class="board-column someday">
-      <div class="board-column-header">Someday</div>
-      <div class="board-column-content">
-        <div class="board-item">
-          <div class="board-item-content"><span>Item #</span>6</div>
-        </div>
-        <div class="board-item">
-          <div class="board-item-content"><span>Item #</span>7</div>
-        </div>
-        <div class="board-item">
-          <div class="board-item-content"><span>Item #</span>8</div>
-        </div>
-        <div class="board-item">
-          <div class="board-item-content"><span>Item #</span>9</div>
-        </div>
-        <div class="board-item">
-          <div class="board-item-content"><span>Item #</span>10</div>
+    <div class="board-column someday-column">
+      <div class="board-column-header someday-header">Someday</div>
+      <div class="board-column-content someday">
+      </div>
+      <div>
+        <div class="board-column-content delete-task">
+          <img class="delete" src="./images/delete.png"/>
         </div>
       </div>
     </div>
@@ -63,6 +42,8 @@
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/hammer.js/2.0.8/hammer.min.js">
   </script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/muuri/0.5.3/muuri.min.js"></script>
+  <script
+    src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
   <script type="text/javascript" src="./main.js"></script>
 </body>
 

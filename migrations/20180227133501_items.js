@@ -6,8 +6,7 @@ exports.up = function(knex, Promise) {
     table.foreign('user_id').references('users.id')
     table.string('item_text').notNullable()
     table.string('status').notNullable()
-    table.string('source').notNullable()
-    table.timestamps(true, true)
+    table.integer('priority').notNullable()
   })
 };
 
